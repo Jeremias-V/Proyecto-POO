@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 namespace TiendaCampesinos.Models
 {
 
-    public class TarjetaCredito{
+    public class TarjetaCreditoModel{
 
         [Key]
         public long Id { get; set; }

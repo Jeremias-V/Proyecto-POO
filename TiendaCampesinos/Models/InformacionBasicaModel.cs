@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 namespace TiendaCampesinos.Models
 {
 
-    public class InformacionBasica{
+    public class InformacionBasicaModel{
 
         [Key]
         public long Id { get; set; }

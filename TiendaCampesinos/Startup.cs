@@ -5,9 +5,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
+using TiendaCampesinos.Services;
 
 namespace TiendaCampesinos
 {
@@ -24,8 +27,8 @@ namespace TiendaCampesinos
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            /* services.AddDbContextPool<TiendaDBContext>(option => option
-            .UseMySql("Server=movilesdb20201.cmlwzrhblbat.us-east-1.rds.amazonaws.com;Port=3306;Database=POOGrupo4;User=movilesDBUser;Password=adminMovilesDB20201;", mySqlOptions => mySqlOptions.ServerVersion(new Version(10, 2, 21), ServerType.MariaDb))); */
+            services.AddDbContextPool<TiendaCampesinosDBContext>(option => option
+            .UseMySql("Server=movilesdb20201.cmlwzrhblbat.us-east-1.rds.amazonaws.com;Port=3306;Database=POOGrupo4;User=movilesDBUser;Password=adminMovilesDB20201;", mySqlOptions => mySqlOptions.ServerVersion(new Version(10, 2, 21), ServerType.MariaDb)));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

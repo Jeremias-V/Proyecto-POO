@@ -1,0 +1,25 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+div#HomeWrapper
+{
+    height: 100vh;
+    background-color: aquamarine;
+    /* display: grid;*/
+    grid-template-rows: 1fr 1fr;
+}
+
+div#HomeWrapper ul
+{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    list-style: none;
+}
+
+div#HomeWrapper ul li
+{
+    margin: 1em;
+}

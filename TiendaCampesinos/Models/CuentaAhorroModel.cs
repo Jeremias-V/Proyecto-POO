@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 namespace TiendaCampesinos.Models
 {
 
-    public class CuentaAhorro{
+    public class CuentaAhorroModel{
 
         [Key]
         public long Id { get; set; }

@@ -3,12 +3,12 @@ using System.ComponentModel.DataAnnotations;
 namespace TiendaCampesinos.Models
 {
 
-    public class InformacionPago{
+    public class InformacionPagoModel{
 
         [Key]
         public long Id { get; set; }
         public long IdTarjetaCredito { get; set; }
-        public long IdPaypal { get; set; }
+        public string CorreoPaypal { get; set; }
         public long IdCuentaAhorros { get; set; }
 
     }
