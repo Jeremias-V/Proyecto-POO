@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="~/css/Login.css">
 </head>
 <body>
-    <div>
+    <div id="login" >
         <form asp-action="IniciarSesion" method="POST">
             <div>
                 <label asp-for="Username">Nombre de Usuario</label>
@@ -22,7 +22,7 @@
             </div>
             
             <div>
-                <input type="submit" value="Iniciar Sesión">
+                <input id="boton" type="submit" value="Iniciar Sesión">
             </div>
         </form>
     </div>

@@ -2,3 +2,53 @@
     margin:0;
     padding: 0;
 }
+
+div#login
+{
+    justify-content:center;
+    text-align: center;
+    height: 100vh;
+    background-color: #8BEB66;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+div#login label
+{
+    justify-content:center;
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: 80;
+    font-size: 20px; 
+    text-decoration: none;
+}
+
+div#login input
+{
+    justify-content:center;
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: 50;
+    font-size: 20px; 
+    text-decoration: none;
+    border: 1px dotted #8BEB66;
+    border-radius: 0;
+    -webkit-appearance: none;
+}
+
+input#boton
+{
+    justify-content: center;
+    align-content: center;
+    display: flex;
+    padding: 10px 15px;
+    background: #C0EEAE;
+    border: 1px solid #6DB84F;
+    color: #566B4E;
+    border-radius: 60px;
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 20px; 
+    text-decoration: none;
+
+}

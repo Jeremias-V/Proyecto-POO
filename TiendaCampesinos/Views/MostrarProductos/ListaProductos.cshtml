@@ -1,0 +1,21 @@
+@model TiendaCampesinos.ViewModels.ListProductViewModel
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Campesinos | Lista de Productos</title>
+</head>
+<body>
+    <ul>
+        @foreach (var item in Model.Productos)
+        {
+            <li>Nombre Producto : @Html.DisplayFor(modelItem => item.NombreProducto)</li>
+            <li><img src="@Html.DisplayFor(modelItem => item.Imagen)" alt="Imagen Producto" width="100" height="100" /></li>
+            <li>Peso Neto: @Html.DisplayFor(modelItem => item.PesoNeto)</li>
+            <li>Precio: $@Html.DisplayFor(modelItem => item.Precio)</li>
+        }
+    </ul>
+</body>
+</html>

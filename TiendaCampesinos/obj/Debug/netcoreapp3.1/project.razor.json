@@ -14417,18 +14417,23 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/t490/Git/Proyecto-POO/TiendaCampesinos/Views/MostrarProductos/ListaProductos.cshtml",
+      "TargetPath": "Views\\MostrarProductos\\ListaProductos.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/t490/Git/Proyecto-POO/TiendaCampesinos/Views/Shared/Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/home/t490/Git/Proyecto-POO/TiendaCampesinos/Views/Login/IniciarSesion.cshtml",
-      "TargetPath": "Views\\Login\\IniciarSesion.cshtml",
+      "FilePath": "/home/t490/Git/Proyecto-POO/TiendaCampesinos/Views/_ViewStart.cshtml",
+      "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/home/t490/Git/Proyecto-POO/TiendaCampesinos/Views/_ViewStart.cshtml",
-      "TargetPath": "Views\\_ViewStart.cshtml",
+      "FilePath": "/home/t490/Git/Proyecto-POO/TiendaCampesinos/Views/InicioSesion/IniciarSesion.cshtml",
+      "TargetPath": "Views\\InicioSesion\\IniciarSesion.cshtml",
       "FileKind": "mvc"
     }
   ],

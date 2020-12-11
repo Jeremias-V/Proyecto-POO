@@ -59,3 +59,4 @@
 /home/t490/Git/Proyecto-POO/TiendaCampesinos/bin/Debug/netcoreapp3.1/System.Diagnostics.DiagnosticSource.dll
 /home/t490/Git/Proyecto-POO/TiendaCampesinos/obj/Debug/netcoreapp3.1/Razor/Views/Registro/Registrarse.cshtml.g.cs
 /home/t490/Git/Proyecto-POO/TiendaCampesinos/obj/Debug/netcoreapp3.1/Razor/Views/InicioSesion/IniciarSesion.cshtml.g.cs
+/home/t490/Git/Proyecto-POO/TiendaCampesinos/obj/Debug/netcoreapp3.1/Razor/Views/MostrarProductos/ListaProductos.cshtml.g.cs

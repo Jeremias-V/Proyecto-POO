@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="~/css/Registro.css">
 </head>
 <body>
-    <div>
+    <div id="registro">
         <form asp-action="Registrarse" method="POST">
-            ++InfoUsuario
+            <label>Informacion del usuario:</label>
             <div>
                 <label asp-for="Usuario.Username">Usuario</label>
                 <input required asp-for="Usuario.Username"/>
@@ -23,13 +23,13 @@
             </div>
 
             <div>
-                <label asp-for="Usuario.TipoUsuario">Tipo de Usuario</label>
+                <label asp-for="Usuario.TipoUsuario">Tipo de Usuario:</label>
                 <select name="Tipo" id="Tipo" asp-for="Usuario.TipoUsuario">
                     <option value="Cliente">Cliente</option>
                     <option value="Campesino">Campesino</option>
                 </select>
             </div>
-            ++Info Basica
+            <label> Informacion basica:</label>
             <div>
                 <label asp-for="InfoBasica.Nombre">Nombre</label>
                 <input asp-for="InfoBasica.Nombre"/>
@@ -49,12 +49,12 @@
                 <label asp-for="InfoBasica.NumeroIdentificacion">Numero de Identificación</label>
                 <input type="text" asp-for="InfoBasica.NumeroIdentificacion"/>
             </div>
-            ++Paypal
+            <label> Paypal:</label>
             <div>
                 <label asp-for="InfoPago.CorreoPaypal">Dirección de Correo PayPal</label>
                 <input asp-for="InfoPago.CorreoPaypal"/>
             </div>
-            ++Tarjeta Crédito
+            <label> Tarjeta crédito: </label>
             <div>
                 <label asp-for="TC.NombreEnTarjeta">Nombre en Tarjeta de Crédito</label>
                 <input asp-for="TC.NombreEnTarjeta"/>
@@ -69,7 +69,7 @@
                 <label asp-for="TC.CVV">Código de Seguridad (CVV)</label>
                 <input type="number" min="0000" max="9999" asp-for="TC.CVV"/>
             </div>
-            ++Cuenta Ahorros
+            <label>Cuenta ahorros:</label>
             <div>
                 <label asp-for="CA.NumeroCuenta">Número de Cuenta</label>
                 <input type="text" asp-for="CA.NumeroCuenta"/>
@@ -79,7 +79,7 @@
                 <label asp-for="CA.IdentificacionAsociada">Número de Identificación Asociado</label>
                 <input type="text" asp-for="CA.IdentificacionAsociada"/>
             </div>
-            ++Información Domicilio
+            <label> Información domicilio: </label>
             <div>
                 <label asp-for="InfoDomicilio.Departamento">Departamento</label>
                 <input asp-for="InfoDomicilio.Departamento"/>
@@ -103,7 +103,7 @@
             
             
             <div>
-                <input type="submit" value="Finalizar Registro">
+                <input id="boton" type="submit" value="Finalizar Registro">
             </div>
         </form>
     </div>
