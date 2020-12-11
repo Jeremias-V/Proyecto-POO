@@ -19,14 +19,15 @@ namespace TiendaCampesinos.Controllers
         #endregion
         [HttpGet("")]
         public async Task<IActionResult> Registrarse(){
-            try{
-                List<ProductoModel> productos = await dBContext.Productos.ToListAsync();
+            try
+            {
                 return View();
             }
-            catch (Exception e){
+            catch (Exception e)
+            {
                 return Content(e.Message);
             }
-            
         }
+        
     }
 }

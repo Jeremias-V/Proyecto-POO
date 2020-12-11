@@ -3,12 +3,20 @@
     padding: 0;
 }
 
-div#login
-{
-    justify-content:center;
-    text-align: center;
-    height: 100vh;
+body{
     background-color: #8BEB66;
+}
+
+div#login
+{   
+    width: 20%;
+	margin: 14% auto;
+	background-color: #F3EDED;
+    border: 1px solid #ECE8E8;
+	border-radius:8px;
+	padding: 100px 9px 0px 9px;
+    justify-content:center;
+    text-align: center; 
     display: grid;
     grid-template-rows: 1fr 1fr;
 }
@@ -38,6 +46,7 @@ div#login input
 
 input#boton
 {
+    margin-left: 30%;
     justify-content: center;
     align-content: center;
     display: flex;

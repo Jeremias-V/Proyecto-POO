@@ -1,5 +1,55 @@
 *{
     margin:0;
     padding: 0;
-    background-color: aquamarine;
+    background-color: #8BEB66;
+    font-family: sans-serif;
+}
+
+div#lista{
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 100px 1fr
+}
+
+
+div#lista
+{
+    grid-row: 2/3;
+}
+
+div#lista table
+{
+    border-collapse: collapse;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 3em;
+}
+
+div#lista table th
+{
+    background:  rgb(215, 176, 69, 0.8);
+    color: #FFFFFF;
+    font-weight: 700;
+    padding: 0.8em 0.4em;
+}
+
+div#lista table td
+{
+    background: rgba(60, 60, 59, 0.6);
+    border: 1px solid rgba(60, 60, 59, 0.2);
+    padding: 0.8em 0.4em;
+    font-size: 0.9em;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+div#lista table td i
+{
+    cursor: pointer;
+    color: #FFFFFF;
+}
+
+div#lista tbody tr
+{
+    background:  rgb(215, 176, 69, 0.7);
 }

@@ -10,9 +10,20 @@ namespace TiendaCampesinos.Models
         public string Username { get; set; }
         public string Password { get; set; }
         public string TipoUsuario { get; set; }
-        public long IdInfoBasica { get; set; }
-        public long IdInfoPago { get; set; }
-        public long IdInfoDomicilio { get; set; }
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }
+        public int Edad { get; set; }
+        public string NumeroIdentificacion { get; set; }
+        public string CorreoPaypal { get; set; }
+        public string NumeroTC { get; set; }
+        public string FechaCaducidadTC { get; set; }
+        public string NombreEnTC { get; set; }
+        public string CVV { get; set; }
+        public string IdentificacionAsociadaCA { get; set; }
+        public string NumeroCA { get; set; }
+        public string Departamento { get; set; }
+        public string Municipio { get; set; }
+        public string Direccion { get; set; }
 
     }
     

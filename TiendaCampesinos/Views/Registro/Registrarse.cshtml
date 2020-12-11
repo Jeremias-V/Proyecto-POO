@@ -1,4 +1,4 @@
-@model TiendaCampesinos.Models.DatosUsuarioModel
+@model TiendaCampesinos.Models.UsuarioModel
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,97 +11,77 @@
 <body>
     <div id="registro">
         <form asp-action="Registrarse" method="POST">
-            <label>Informacion del usuario:</label>
-            <div>
-                <label asp-for="Usuario.Username">Usuario</label>
-                <input required asp-for="Usuario.Username"/>
+            <label>Informacion del usuario</label>
+            <br />
+            <br />
+            <div id= "usuario">
+                <label asp-for="Username">Usuario</label>
+                <input required asp-for="Username"/>
+                <label asp-for="Password">Contraseña</label>
+                <input required type="password" asp-for="Password"/>
             </div>
-
             <div>
-                <label asp-for="Usuario.Password">Contraseña</label>
-                <input required type="password" asp-for="Usuario.Password"/>
-            </div>
-
-            <div>
-                <label asp-for="Usuario.TipoUsuario">Tipo de Usuario:</label>
-                <select name="Tipo" id="Tipo" asp-for="Usuario.TipoUsuario">
+                <br />
+                <label asp-for="TipoUsuario">Tipo de Usuario</label>
+                <div id="movimiento">
+                <select name="Tipo" id="Tipo" asp-for="TipoUsuario">
                     <option value="Cliente">Cliente</option>
                     <option value="Campesino">Campesino</option>
                 </select>
+                </div>
             </div>
-            <label> Informacion basica:</label>
+            <br />
+            <label> Informacion basica</label>
+            <div id="infobasica">
+                <label asp-for="Nombre">Nombre</label>
+                <input asp-for="Nombre"/>
+                <label asp-for="Apellido">Apellido</label>
+                <input asp-for="Apellido"/>
+            </div>
+            <div id="infobasica2">
+                <label asp-for="Edad">Edad</label>
+                <input type="number" min="18" max="100" asp-for="Edad"/>
+                <label asp-for="NumeroIdentificacion">Numero de Identificación</label>
+                <input type="text" asp-for="NumeroIdentificacion"/>
+            </div>
+            <br />
+            <label> Paypal</label>
+            <div id="pai">
+                <label asp-for="CorreoPaypal">Dirección de Correo PayPal</label>
+                <input asp-for="CorreoPaypal"/>
+            </div>
+            <br />
+            <label> Tarjeta crédito </label>
             <div>
-                <label asp-for="InfoBasica.Nombre">Nombre</label>
-                <input asp-for="InfoBasica.Nombre"/>
-            </div>
+                <label asp-for="NombreEnTC">Nombre en Tarjeta de Crédito</label>
+                <input asp-for="NombreEnTC"/>
+                <label asp-for="NumeroTC">Numero de Tarjeta</label>
+                <input type="text" asp-for="NumeroTC"/>
+                <label asp-for="CVV">Código de Seguridad (CVV)</label>
+                <input type="number" min="0000" max="9999" asp-for="CVV"/>
 
-            <div>
-                <label asp-for="InfoBasica.Apellido">Apellido</label>
-                <input asp-for="InfoBasica.Apellido"/>
+            <br />
+            <br />
+            <label>Cuenta ahorros</label>
+            <div id="aho">
+                <label asp-for="NumeroCA">Número de Cuenta</label>
+                <input type="text" asp-for="NumeroCA"/>
+                <label asp-for="IdentificacionAsociadaCA">Número de Identificación Asociado</label>
+                <input type="text" asp-for="IdentificacionAsociadaCA"/>
             </div>
-
-            <div>
-                <label asp-for="InfoBasica.Edad">Edad</label>
-                <input type="number" min="18" max="100" asp-for="InfoBasica.Edad"/>
-            </div>
-
-            <div>
-                <label asp-for="InfoBasica.NumeroIdentificacion">Numero de Identificación</label>
-                <input type="text" asp-for="InfoBasica.NumeroIdentificacion"/>
-            </div>
-            <label> Paypal:</label>
-            <div>
-                <label asp-for="InfoPago.CorreoPaypal">Dirección de Correo PayPal</label>
-                <input asp-for="InfoPago.CorreoPaypal"/>
-            </div>
-            <label> Tarjeta crédito: </label>
-            <div>
-                <label asp-for="TC.NombreEnTarjeta">Nombre en Tarjeta de Crédito</label>
-                <input asp-for="TC.NombreEnTarjeta"/>
+            <br />
+            <label> Información domicilio </label>
+            <div id="first">
+                <label asp-for="Departamento">Departamento</label>
+                <input asp-for="Departamento"/>
+                <label asp-for="Municipio">Municipio</label>
+                <input asp-for="Municipio"/>
             </div>
             
-            <div>
-                <label asp-for="TC.Numero">Numero de Tarjeta</label>
-                <input type="text" asp-for="TC.Numero"/>
-            </div>
-
-            <div>
-                <label asp-for="TC.CVV">Código de Seguridad (CVV)</label>
-                <input type="number" min="0000" max="9999" asp-for="TC.CVV"/>
-            </div>
-            <label>Cuenta ahorros:</label>
-            <div>
-                <label asp-for="CA.NumeroCuenta">Número de Cuenta</label>
-                <input type="text" asp-for="CA.NumeroCuenta"/>
-            </div>
-
-            <div>
-                <label asp-for="CA.IdentificacionAsociada">Número de Identificación Asociado</label>
-                <input type="text" asp-for="CA.IdentificacionAsociada"/>
-            </div>
-            <label> Información domicilio: </label>
-            <div>
-                <label asp-for="InfoDomicilio.Departamento">Departamento</label>
-                <input asp-for="InfoDomicilio.Departamento"/>
-            </div>
-            
-            <div>
-                <label asp-for="InfoDomicilio.Municipio">Municipio</label>
-                <input asp-for="InfoDomicilio.Municipio"/>
-            </div>
-            
-            <div>
-                <label asp-for="InfoDomicilio.Direccion">Dirección</label>
-                <input asp-for="InfoDomicilio.Direccion"/>
-            </div>
-
-            <div>
-                <label asp-for="InfoDomicilio.Detalles">Información adicional Dirección</label>
-                <input asp-for="InfoDomicilio.Detalles"/>
-            </div>
-
-            
-            
+            <div id="second">
+                <label asp-for="Direccion">Dirección</label>
+                <input asp-for="Direccion"/>
+            </div>            
             <div>
                 <input id="boton" type="submit" value="Finalizar Registro">
             </div>
