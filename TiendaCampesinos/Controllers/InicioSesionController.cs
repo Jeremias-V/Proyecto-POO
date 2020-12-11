@@ -21,7 +21,7 @@ namespace TiendaCampesinos.Controllers
         public async Task<IActionResult> IniciarSesion(){
             try{
                 List<ProductoModel> productos = await dBContext.Productos.ToListAsync();
-                return Ok("Aqui debemos implementar el Inicio de Sesión.");
+                return View();
             }
             catch (Exception e){
                 return Content(e.Message);

@@ -1,0 +1,111 @@
+@model TiendaCampesinos.Models.DatosUsuarioModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Campesinos | Registro</title>
+    <link rel="stylesheet" href="~/css/Registro.css">
+</head>
+<body>
+    <div>
+        <form asp-action="Registrarse" method="POST">
+            ++InfoUsuario
+            <div>
+                <label asp-for="Usuario.Username">Usuario</label>
+                <input required asp-for="Usuario.Username"/>
+            </div>
+
+            <div>
+                <label asp-for="Usuario.Password">Contraseña</label>
+                <input required type="password" asp-for="Usuario.Password"/>
+            </div>
+
+            <div>
+                <label asp-for="Usuario.TipoUsuario">Tipo de Usuario</label>
+                <select name="Tipo" id="Tipo" asp-for="Usuario.TipoUsuario">
+                    <option value="Cliente">Cliente</option>
+                    <option value="Campesino">Campesino</option>
+                </select>
+            </div>
+            ++Info Basica
+            <div>
+                <label asp-for="InfoBasica.Nombre">Nombre</label>
+                <input asp-for="InfoBasica.Nombre"/>
+            </div>
+
+            <div>
+                <label asp-for="InfoBasica.Apellido">Apellido</label>
+                <input asp-for="InfoBasica.Apellido"/>
+            </div>
+
+            <div>
+                <label asp-for="InfoBasica.Edad">Edad</label>
+                <input type="number" min="18" max="100" asp-for="InfoBasica.Edad"/>
+            </div>
+
+            <div>
+                <label asp-for="InfoBasica.NumeroIdentificacion">Numero de Identificación</label>
+                <input type="text" asp-for="InfoBasica.NumeroIdentificacion"/>
+            </div>
+            ++Paypal
+            <div>
+                <label asp-for="InfoPago.CorreoPaypal">Dirección de Correo PayPal</label>
+                <input asp-for="InfoPago.CorreoPaypal"/>
+            </div>
+            ++Tarjeta Crédito
+            <div>
+                <label asp-for="TC.NombreEnTarjeta">Nombre en Tarjeta de Crédito</label>
+                <input asp-for="TC.NombreEnTarjeta"/>
+            </div>
+            
+            <div>
+                <label asp-for="TC.Numero">Numero de Tarjeta</label>
+                <input type="text" asp-for="TC.Numero"/>
+            </div>
+
+            <div>
+                <label asp-for="TC.CVV">Código de Seguridad (CVV)</label>
+                <input type="number" min="0000" max="9999" asp-for="TC.CVV"/>
+            </div>
+            ++Cuenta Ahorros
+            <div>
+                <label asp-for="CA.NumeroCuenta">Número de Cuenta</label>
+                <input type="text" asp-for="CA.NumeroCuenta"/>
+            </div>
+
+            <div>
+                <label asp-for="CA.IdentificacionAsociada">Número de Identificación Asociado</label>
+                <input type="text" asp-for="CA.IdentificacionAsociada"/>
+            </div>
+            ++Información Domicilio
+            <div>
+                <label asp-for="InfoDomicilio.Departamento">Departamento</label>
+                <input asp-for="InfoDomicilio.Departamento"/>
+            </div>
+            
+            <div>
+                <label asp-for="InfoDomicilio.Municipio">Municipio</label>
+                <input asp-for="InfoDomicilio.Municipio"/>
+            </div>
+            
+            <div>
+                <label asp-for="InfoDomicilio.Direccion">Dirección</label>
+                <input asp-for="InfoDomicilio.Direccion"/>
+            </div>
+
+            <div>
+                <label asp-for="InfoDomicilio.Detalles">Información adicional Dirección</label>
+                <input asp-for="InfoDomicilio.Detalles"/>
+            </div>
+
+            
+            
+            <div>
+                <input type="submit" value="Finalizar Registro">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

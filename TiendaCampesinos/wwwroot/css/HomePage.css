@@ -5,21 +5,40 @@
 
 div#HomeWrapper
 {
+    justify-content:center;
     height: 100vh;
-    background-color: aquamarine;
-    /* display: grid;*/
+    background-color: #8BEB66;
+    display: grid;
     grid-template-rows: 1fr 1fr;
+
 }
 
 div#HomeWrapper ul
 {
-    display: flex;
+    grid-template-rows: 2/3;
     height: 100%;
-    align-items: center;
     list-style: none;
+    position: relative;
+    top:80%;
 }
 
 div#HomeWrapper ul li
 {
     margin: 1em;
 }
+
+div#HomeWrapper a {
+    justify-content: center;
+    align-content: center;
+    display: flex;
+    padding: 30px 60px;
+    background: #C0EEAE;
+    border: 1px solid #6DB84F;
+    color: #566B4E;
+    border-radius: 60px;
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 20px; 
+    text-decoration: none;
+}
+

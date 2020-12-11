@@ -1,0 +1,30 @@
+@model TiendaCampesinos.Models.UsuarioModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Campesinos | Iniciar Sesión</title>
+    <link rel="stylesheet" href="~/css/Login.css">
+</head>
+<body>
+    <div>
+        <form asp-action="IniciarSesion" method="POST">
+            <div>
+                <label asp-for="Username">Nombre de Usuario</label>
+                <input asp-for="Username"/>
+            </div>
+
+            <div>
+                <label asp-for="Password">Contraseña</label>
+                <input type="password" asp-for="Password"/>
+            </div>
+            
+            <div>
+                <input type="submit" value="Iniciar Sesión">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

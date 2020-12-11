@@ -14392,6 +14392,11 @@
   "RootNamespace": "TiendaCampesinos",
   "Documents": [
     {
+      "FilePath": "/home/t490/Git/Proyecto-POO/TiendaCampesinos/Views/Registro/Registrarse.cshtml",
+      "TargetPath": "Views\\Registro\\Registrarse.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/t490/Git/Proyecto-POO/TiendaCampesinos/Views/Shared/_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
@@ -14414,6 +14419,11 @@
     {
       "FilePath": "/home/t490/Git/Proyecto-POO/TiendaCampesinos/Views/Shared/Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/t490/Git/Proyecto-POO/TiendaCampesinos/Views/Login/IniciarSesion.cshtml",
+      "TargetPath": "Views\\Login\\IniciarSesion.cshtml",
       "FileKind": "mvc"
     },
     {

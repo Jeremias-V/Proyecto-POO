@@ -21,8 +21,7 @@ namespace TiendaCampesinos.Controllers
         public async Task<IActionResult> Registrarse(){
             try{
                 List<ProductoModel> productos = await dBContext.Productos.ToListAsync();
-                if(productos == null) throw new Exception("No hay productos.");
-                return Ok("Aqui debemos implementar el registro de usuario.");
+                return View();
             }
             catch (Exception e){
                 return Content(e.Message);
