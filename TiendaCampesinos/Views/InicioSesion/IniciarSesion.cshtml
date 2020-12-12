@@ -13,13 +13,13 @@
         <form asp-action="IniciarSesion" method="POST">
             <div>
                 <label asp-for="Username">Nombre de Usuario</label>
-                <input asp-for="Username"/>
+                <input required asp-for="Username"/>
             </div>
 
             <div>
                 <label asp-for="Password">Contraseña</label>
                 <br/> 
-                <input type="password" asp-for="Password"/>
+                <input required type="password" asp-for="Password"/>
             </div>
             
             <div>

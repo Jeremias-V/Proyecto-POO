@@ -1,8 +1,13 @@
 *{
     margin:0;
     padding: 0;
-    background-color: #8BEB66;
     font-family: sans-serif;
+}
+
+body{
+    background-image: url("https://1.bp.blogspot.com/-Y2TBmGkP1Qk/VgBv9G8EiuI/AAAAAAAAA-A/EuaExDn7iXUK3tQrvTWbLsXgtHalgbf8ACPcBGAYYCw/s1600/302.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 div#lista{

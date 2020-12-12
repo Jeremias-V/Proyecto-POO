@@ -8,6 +8,9 @@ div#HomeWrapper
     justify-content:center;
     height: 100vh;
     background-color: #8BEB66;
+    background-image: url("https://1.bp.blogspot.com/-Y2TBmGkP1Qk/VgBv9G8EiuI/AAAAAAAAA-A/EuaExDn7iXUK3tQrvTWbLsXgtHalgbf8ACPcBGAYYCw/s1600/302.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     display: grid;
     grid-template-rows: 1fr 1fr;
 
