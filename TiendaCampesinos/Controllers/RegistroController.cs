@@ -38,7 +38,7 @@ namespace TiendaCampesinos.Controllers
         }
 
         [HttpGet("")]
-        public async Task<IActionResult> Registrarse(){
+        public IActionResult Registrarse(){
             try
             {
                 return View();
