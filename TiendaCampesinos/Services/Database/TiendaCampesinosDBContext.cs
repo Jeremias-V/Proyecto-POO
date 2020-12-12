@@ -6,6 +6,6 @@ namespace TiendaCampesinos.Services
     public class TiendaCampesinosDBContext : DbContext{
         public TiendaCampesinosDBContext(DbContextOptions<TiendaCampesinosDBContext> options) : base(options){}
         public DbSet<ProductoModel> Productos {get; set;}
-        public DbSet<UsuarioModel> Usuario {get; set;}
+        public DbSet<UsuarioModel> Usuarios {get; set;}
     }
 }

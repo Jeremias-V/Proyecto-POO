@@ -5,6 +5,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TiendaCampesinos.Models;
 using TiendaCampesinos.Services;
+using System.Linq;
+using System.Net;  
+
 
 namespace TiendaCampesinos.Controllers
 {
@@ -18,10 +21,29 @@ namespace TiendaCampesinos.Controllers
         }
         #endregion
         [HttpGet("")]
-        public async Task<IActionResult> IniciarSesion(){
+        public IActionResult IniciarSesion(){
             try{
-                List<ProductoModel> productos = await dBContext.Productos.ToListAsync();
                 return View();
+            }
+            catch (Exception e){
+                return Content(e.Message);
+            }
+            
+        }
+
+        [HttpPost("")]
+        public async Task<IActionResult> IniciarSesion(string Username, string Password){
+            try{
+                var users = await dBContext.Usuarios.ToListAsync();
+                if(users.FirstOrDefault(user => user.Username == Username) != null){
+                    if(users.FirstOrDefault(user => user.Password == Password) != null){
+                        return Ok("Bienvenido " + Username);
+                    }else{
+                        return Content("Nombre de usuario o contraseña incorrecto.");
+                    }
+                }else{
+                    return Content("Nombre de usuario o contraseña incorrecto.");
+                }
             }
             catch (Exception e){
                 return Content(e.Message);

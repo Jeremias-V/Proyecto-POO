@@ -9,53 +9,54 @@ body{
 
 div#registro
 {
-    width: 52%;
-	margin: 5% auto;
+    width: 51%;
+	margin: 3% auto;
 	background-color: #F3EDED;
     border: 1px solid #ECE8E8;
 	border-radius:8px;
-	padding: 50px 9px 0px 9px;
+	padding: 20px 9px 0px 9px;
     justify-content:center;
     text-align: center; 
     display: grid;
     grid-template-rows: 1fr 1fr;
+    height: 800px;
 }
 
 
 
 
 div#movimiento{
-    margin-left: 20%;
+    margin-left: 15%;
 }
 
 div#usuario
 {
-    text-align: left;
+    text-align: center;
 }
 
 
 div#first
 {
-    text-align: left;
+    text-align: center;
 }
 
 div#second
 {
-    text-align: left;
+    text-align: center;
 }
 
 div#aho
 {
-    text-align: left;
+    text-align: center;
 }
 
 div#infobasica
 {
-    text-align: left;
+    text-align: center;
 }
 div#infobasica2
 {
-    text-align: left;
+    text-align: center;
 }
 div#pai
 {

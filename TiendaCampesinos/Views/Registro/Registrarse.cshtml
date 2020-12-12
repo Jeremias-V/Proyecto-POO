@@ -11,78 +11,92 @@
 <body>
     <div id="registro">
         <form asp-action="Registrarse" method="POST">
-            <label>Informacion del usuario</label>
+            <label><b>Informacion del usuario</b></label>
             <br />
             <br />
             <div id= "usuario">
                 <label asp-for="Username">Usuario</label>
                 <input required asp-for="Username"/>
+                <br />
                 <label asp-for="Password">Contraseña</label>
                 <input required type="password" asp-for="Password"/>
             </div>
             <div>
                 <br />
-                <label asp-for="TipoUsuario">Tipo de Usuario</label>
+                <label asp-for="TipoUsuario"><b>Tipo de Usuario</b></label>
                 <div id="movimiento">
-                <select name="Tipo" id="Tipo" asp-for="TipoUsuario">
+                <select name="TipoUsuario" id="Tipo" asp-for="TipoUsuario">
                     <option value="Cliente">Cliente</option>
                     <option value="Campesino">Campesino</option>
                 </select>
                 </div>
             </div>
             <br />
-            <label> Informacion basica</label>
+            <label><b>Información Básica</b></label>
             <div id="infobasica">
                 <label asp-for="Nombre">Nombre</label>
-                <input asp-for="Nombre"/>
+                <input required asp-for="Nombre"/>
+                <br />
                 <label asp-for="Apellido">Apellido</label>
-                <input asp-for="Apellido"/>
+                <input required asp-for="Apellido"/>
+                <br />
             </div>
             <div id="infobasica2">
                 <label asp-for="Edad">Edad</label>
-                <input type="number" min="18" max="100" asp-for="Edad"/>
-                <label asp-for="NumeroIdentificacion">Numero de Identificación</label>
-                <input type="text" asp-for="NumeroIdentificacion"/>
+                <input required type="number" min="18" max="100" asp-for="Edad"/>
+                <br />
+                <label asp-for="NumeroIdentificacion">Número de Identificación</label>
+                <input required type="text" asp-for="NumeroIdentificacion"/>
             </div>
             <br />
-            <label> Paypal</label>
+            <label><b>Paypal</b></label>
             <div id="pai">
                 <label asp-for="CorreoPaypal">Dirección de Correo PayPal</label>
-                <input asp-for="CorreoPaypal"/>
+                <input required asp-for="CorreoPaypal"/>
             </div>
             <br />
-            <label> Tarjeta crédito </label>
+            <label> <b>Tarjeta crédito</b></label>
             <div>
                 <label asp-for="NombreEnTC">Nombre en Tarjeta de Crédito</label>
-                <input asp-for="NombreEnTC"/>
+                <input required asp-for="NombreEnTC"/>
+                <br />
                 <label asp-for="NumeroTC">Numero de Tarjeta</label>
-                <input type="text" asp-for="NumeroTC"/>
+                <input required type="text" asp-for="NumeroTC"/>
+                <br />
                 <label asp-for="CVV">Código de Seguridad (CVV)</label>
-                <input type="number" min="0000" max="9999" asp-for="CVV"/>
+                <input required type="number" min="0000" max="9999" asp-for="CVV"/>
+                <br />
+                <label asp-for="FechaCaducidadTC">Fecha de Caducidad</label>
+                <input required type="text" asp-for="FechaCaducidadTC"/>
 
             <br />
             <br />
-            <label>Cuenta ahorros</label>
+            <label><b>Cuenta ahorros</b></label>
             <div id="aho">
                 <label asp-for="NumeroCA">Número de Cuenta</label>
-                <input type="text" asp-for="NumeroCA"/>
+                <input required type="text" asp-for="NumeroCA"/>
+                <br />
                 <label asp-for="IdentificacionAsociadaCA">Número de Identificación Asociado</label>
-                <input type="text" asp-for="IdentificacionAsociadaCA"/>
+                <input required type="text" asp-for="IdentificacionAsociadaCA"/>
             </div>
             <br />
-            <label> Información domicilio </label>
+            <label><b>Información domicilio</b></label>
             <div id="first">
                 <label asp-for="Departamento">Departamento</label>
-                <input asp-for="Departamento"/>
+                <input required asp-for="Departamento"/>
+                <br />
                 <label asp-for="Municipio">Municipio</label>
-                <input asp-for="Municipio"/>
+                <input required asp-for="Municipio"/>
+                <br />
             </div>
             
             <div id="second">
                 <label asp-for="Direccion">Dirección</label>
-                <input asp-for="Direccion"/>
+                <input required asp-for="Direccion"/>
+                <br />
             </div>            
             <div>
+                <br />
                 <input id="boton" type="submit" value="Finalizar Registro">
             </div>
         </form>

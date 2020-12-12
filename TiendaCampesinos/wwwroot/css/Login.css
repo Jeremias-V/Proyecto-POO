@@ -9,6 +9,7 @@ body{
 
 div#login
 {   
+    height: 290px;
     width: 20%;
 	margin: 14% auto;
 	background-color: #F3EDED;
