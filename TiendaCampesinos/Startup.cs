@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,6 +27,11 @@ namespace TiendaCampesinos
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+            .AddCookie(options => {
+                options.LoginPath = "/InicioSesion";
+                options.Cookie.Name = "SesionIniciada";
+            });
             services.AddControllersWithViews();
             services.AddDbContextPool<TiendaCampesinosDBContext>(option => option
             .UseMySql("Server=movilesdb20201.cmlwzrhblbat.us-east-1.rds.amazonaws.com;Port=3306;Database=POOGrupo4;User=movilesDBUser;Password=adminMovilesDB20201;", mySqlOptions => mySqlOptions.ServerVersion(new Version(10, 2, 21), ServerType.MariaDb)));
@@ -49,7 +55,9 @@ namespace TiendaCampesinos
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
+            app.UseCookiePolicy();
 
             app.UseEndpoints(endpoints =>
             {

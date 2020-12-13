@@ -11,32 +11,28 @@ using TiendaCampesinos.ViewModels;
 namespace TiendaCampesinos.Controllers
 {
     [Route("[controller]")]
-    public class MostrarProductosController : Controller
+    public class CerrarSesionController : Controller
     {
         #region Properties
-        private readonly TiendaCampesinosDBContext dBContext;
         private IMemoryCache _cache;
 
         #endregion
 
         #region Constructor
-        public MostrarProductosController(TiendaCampesinosDBContext dBContext, IMemoryCache memoryCache){
-            this.dBContext = dBContext;
+        public CerrarSesionController(IMemoryCache memoryCache){
             _cache = memoryCache;
         }
         #endregion
-
+        
         [HttpGet("")]
-        public async Task<IActionResult> ListaProductos(){
-            ListProductViewModel vm = new ListProductViewModel();
+        public IActionResult CerrarSesion(){
             try{
                 string cacheEntry = "";
-                if (!_cache.TryGetValue("SesionIniciada", out cacheEntry))
+                if (_cache.TryGetValue("SesionIniciada", out cacheEntry))
                 {
-                    return Redirect("/");
+                    _cache.Remove("SesionIniciada");
                 }
-                vm.Productos = await dBContext.Productos.ToListAsync();
-                return View(vm);
+                return Redirect("/");
             }
             catch (Exception e){
                 return Content(e.Message);

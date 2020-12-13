@@ -14427,6 +14427,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/t490/Git/Proyecto-POO/TiendaCampesinos/Views/Logout/CerrarSesion.cshtml",
+      "TargetPath": "Views\\Logout\\CerrarSesion.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/t490/Git/Proyecto-POO/TiendaCampesinos/Views/_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
