@@ -13,8 +13,13 @@
         <header>
             <ul>
                 <li>
-                    <a>
-                        Carrito Compras
+                    <a asp-controller="CerrarSesion" asp-action="CerrarSesion">
+                        Cerrar Sesión
+                    </a>
+                </li> 
+                <li>
+                    <a asp-controller="ActualizarUsuario" asp-action="ActualizarInfo">
+                        Modificar Datos
                     </a>
                 </li>
                 <li>
@@ -23,13 +28,8 @@
                     </a>
                 </li>
                 <li>
-                    <a asp-controller="ActualizarUsuario" asp-action="ActualizarInfo">
-                        Modificar Datos
-                    </a>
-                </li>
-                <li>
-                    <a asp-controller="CerrarSesion" asp-action="CerrarSesion">
-                        Cerrar Sesión
+                    <a>
+                        Carrito Compras
                     </a>
                 </li>                
             </ul>

@@ -14427,6 +14427,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/t490/Git/Proyecto-POO/TiendaCampesinos/Views/ActualizarUsuario/ActualizarInfo.cshtml",
+      "TargetPath": "Views\\ActualizarUsuario\\ActualizarInfo.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/t490/Git/Proyecto-POO/TiendaCampesinos/Views/Logout/CerrarSesion.cshtml",
       "TargetPath": "Views\\Logout\\CerrarSesion.cshtml",
       "FileKind": "mvc"
@@ -14439,11 +14444,6 @@
     {
       "FilePath": "/home/t490/Git/Proyecto-POO/TiendaCampesinos/Views/InicioSesion/IniciarSesion.cshtml",
       "TargetPath": "Views\\InicioSesion\\IniciarSesion.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/t490/Git/Proyecto-POO/TiendaCampesinos/Views/ActualizarInfo/ActualizarInfo.cshtml",
-      "TargetPath": "Views\\ActualizarInfo\\ActualizarInfo.cshtml",
       "FileKind": "mvc"
     }
   ],

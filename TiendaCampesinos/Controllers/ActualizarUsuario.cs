@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -14,25 +15,30 @@ namespace TiendaCampesinos.Controllers
     public class ActualizarUsuarioController : Controller
     {
         #region Properties
+        private readonly TiendaCampesinosDBContext dBContext;
         private IMemoryCache _cache;
 
         #endregion
 
         #region Constructor
-        public ActualizarUsuarioController(IMemoryCache memoryCache){
+        public ActualizarUsuarioController(TiendaCampesinosDBContext dBContext, IMemoryCache memoryCache){
+            this.dBContext = dBContext;
             _cache = memoryCache;
         }
         #endregion
         
         [HttpGet("")]
-        public IActionResult ActualizarInfo(){
+        public async Task<IActionResult> ActualizarInfo(){
             try{
                 string cacheEntry = "";
                 if (!_cache.TryGetValue("SesionIniciada", out cacheEntry))
                 {
                     return Redirect("/");
                 }
-                return Content(cacheEntry);
+                var users = await dBContext.Usuarios.ToListAsync();
+                long id = users.FirstOrDefault(user => user.Username == cacheEntry).Id;
+                UsuarioModel user = await dBContext.Usuarios.FindAsync(id);
+                return View(user);
             }
             catch (Exception e){
                 return Content(e.Message);
