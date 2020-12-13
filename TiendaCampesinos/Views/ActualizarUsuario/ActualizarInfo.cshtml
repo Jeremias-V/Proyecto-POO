@@ -36,8 +36,12 @@
         </header>
     </div>
     <div id="registro">
-        <form asp-action="ActualizarInfo" method="PUT">
+        <form asp-action="ActualizarInfo" method="POST">
             <label><b>Información Básica</b></label>
+            <input type="hidden" asp-for="Id">
+            <input type="hidden" asp-for="Username">
+            <input type="hidden" asp-for="Password">
+            <input type="hidden" asp-for="TipoUsuario">
             <div id="infobasica">
                 <label asp-for="Nombre">Nombre</label>
                 <input required asp-for="Nombre"/>

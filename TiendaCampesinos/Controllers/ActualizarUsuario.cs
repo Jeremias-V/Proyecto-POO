@@ -45,5 +45,20 @@ namespace TiendaCampesinos.Controllers
             }
             
         }
+
+        [HttpPost("")]
+        public async Task<IActionResult> ActualizarInfo(UsuarioModel Usuario)
+        {
+            try
+            {
+                dBContext.Entry(Usuario).State = EntityState.Modified;
+                await dBContext.SaveChangesAsync();
+                return Redirect("/MostrarProductos");
+            }
+            catch (Exception e)
+            {
+                return Content(e.Message);
+            }
+        }
     }
 }
