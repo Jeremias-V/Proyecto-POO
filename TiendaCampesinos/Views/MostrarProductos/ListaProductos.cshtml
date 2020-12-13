@@ -9,7 +9,32 @@
     <link rel="stylesheet" href="~/css/ListProductos.css">
 </head>
 <body>
-    <a asp-controller="CerrarSesion" asp-action="CerrarSesion">CerrarSesion</a>
+    <div id="HomeWrapper">
+        <header>
+            <ul>
+                <li>
+                    <a>
+                        Carrito Compras
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        Historial Compras
+                    </a>
+                </li>
+                <li>
+                    <a asp-controller="ActualizarUsuario" asp-action="ActualizarInfo">
+                        Modificar Datos
+                    </a>
+                </li>
+                <li>
+                    <a asp-controller="CerrarSesion" asp-action="CerrarSesion">
+                        Cerrar Sesión
+                    </a>
+                </li>                
+            </ul>
+        </header>
+    </div>
     <div id="lista">
     <table>
         <thead>
