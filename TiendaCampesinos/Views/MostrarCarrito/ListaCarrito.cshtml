@@ -23,13 +23,13 @@
                     </a>
                 </li>
                 <li>
-                    <a>
+                    <a asp-controller="ListaCompras" asp-action="ListaCompras">
                         Historial Compras
                     </a>
                 </li>
                 <li>
-                    <a>
-                        Carrito Compras
+                    <a asp-controller="MostrarProductos" asp-action="ListaProductos">
+                        Ver Productos
                     </a>
                 </li>                
             </ul>
@@ -42,7 +42,7 @@
                 <th>Nombre del producto</th>
                 <th>Imagen del producto</th>
                 <th>Peso del producto (gr)</th>
-                <th>Precio del producto</th>
+                <th>Precio por Unidad</th>
                 <th>Cantidad</th>
             </tr>
         </thead>
@@ -54,7 +54,7 @@
                         <td>@Html.DisplayFor(modelItem => item.Item2.NombreProducto)</td>
                         <td><img src="@Html.DisplayFor(modelItem => item.Item2.Imagen)" alt="Imagen Producto" width="100" height="100" /></td>
                         <td>@Html.DisplayFor(modelItem => item.Item2.PesoNeto)</td>
-                        <td>@Html.DisplayFor(modelItem => item.Item2.Precio)</td>
+                        <td>$@Html.DisplayFor(modelItem => item.Item2.Precio)</td>
                         <td>@Html.DisplayFor(modelItem => item.Item1.Cantidad)</td>
                     </tr>
                 }

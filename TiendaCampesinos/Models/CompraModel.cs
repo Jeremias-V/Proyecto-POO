@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace TiendaCampesinos.Models
@@ -13,6 +12,7 @@ namespace TiendaCampesinos.Models
         public long IdProducto { get; set; }
         public string MetodoPago { get; set; }
         public int Cantidad { get; set;}
+        public int Precio { get; set;}
         public DateTime Fecha { get; set; }
 
     }

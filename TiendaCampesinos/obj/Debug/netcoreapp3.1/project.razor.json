@@ -14462,6 +14462,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/t490/Git/Proyecto-POO/TiendaCampesinos/Views/HistorialCompras.cshtml/ListaCompras.cshtml",
+      "TargetPath": "Views\\HistorialCompras.cshtml\\ListaCompras.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/t490/Git/Proyecto-POO/TiendaCampesinos/Views/CrearProductos/CrearProducto.cshtml",
       "TargetPath": "Views\\CrearProductos\\CrearProducto.cshtml",
       "FileKind": "mvc"

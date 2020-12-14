@@ -1,11 +1,11 @@
-@model TiendaCampesinos.ViewModels.ListProductViewModel
+@model TiendaCampesinos.ViewModels.ListCompraViewModel
 
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda de Campesinos | Lista de Productos</title>
+    <title>Tienda de Campesinos | Historial de Compras</title>
     <link rel="stylesheet" href="~/css/ListProductos.css">
 </head>
 <body>
@@ -23,8 +23,8 @@
                     </a>
                 </li>
                 <li>
-                    <a asp-controller="ListaCompras" asp-action="ListaCompras">
-                        Historial Compras
+                    <a asp-controller="MostrarProductos" asp-action="ListaProductos">
+                        Ver Productos
                     </a>
                 </li>
                 <li>
@@ -41,30 +41,24 @@
             <tr>
                 <th>Nombre del producto</th>
                 <th>Imagen del producto</th>
-                <th>Peso del producto (gr)</th>
+                <th>Cantidad del producto</th>
                 <th>Precio por Unidad</th>
-                <th>Agregar al Carrito</th>
+                <th>Fecha de Compra</th>
+                <th>Método de Pago</th>
             </tr>
         </thead>
         <tbody>
             <ul>
-                @foreach (var item in Model.Productos)
+                @foreach (var item in Model.CompraProducto)
                 {
-                    if(item.Cantidad > 0){
                     <tr>
-                        <td>@Html.DisplayFor(modelItem => item.NombreProducto)</td>
-                        <td><img src="@Html.DisplayFor(modelItem => item.Imagen)" alt="Imagen Producto" width="100" height="100" /></td>
-                        <td>@Html.DisplayFor(modelItem => item.PesoNeto)</td>
-                        <td>$@Html.DisplayFor(modelItem => item.Precio)</td>
-                        <td>
-                            <form asp-action="ListaProductos" method="POST">
-                                <input type="hidden" asp-for="producto.Id" value="@item.Id"/>
-                                <input type="number" required asp-for="producto.Cantidad" min="1" max="@Html.DisplayFor(modelItem => item.Cantidad)"/>
-                                <input id="boton" type="submit" value="Confirmar">
-                            </form>
-                        </td>
+                        <td>@Html.DisplayFor(modelItem => item.Item2.NombreProducto)</td>
+                        <td><img src="@Html.DisplayFor(modelItem => item.Item2.Imagen)" alt="Imagen Producto" width="100" height="100" /></td>
+                        <td>@Html.DisplayFor(modelItem => item.Item1.Cantidad)</td>
+                        <td>$@Html.DisplayFor(modelItem => item.Item1.Precio)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Item1.Fecha)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Item1.MetodoPago)</td>
                     </tr>
-                    }
                 }
             </ul>
         </tbody>

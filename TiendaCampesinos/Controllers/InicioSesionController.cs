@@ -49,7 +49,6 @@ namespace TiendaCampesinos.Controllers
                     if(users.FirstOrDefault(user => user.Password == Password) != null){
 
                         var cacheEntryOptions = new MemoryCacheEntryOptions()
-                        // Keep in cache for this time, reset time if accessed.
                         .SetSlidingExpiration(TimeSpan.FromMinutes(10));
                         _cache.Set("SesionIniciada", Username, cacheEntryOptions);
                         return Redirect("/MostrarProductos");
