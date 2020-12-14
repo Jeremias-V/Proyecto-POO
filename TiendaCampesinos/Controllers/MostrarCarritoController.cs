@@ -81,7 +81,9 @@ namespace TiendaCampesinos.Controllers
                 {
                     ProductoModel tmp = productosAsociados.First(prod => prod.Id == item.IdProducto);
                     CompraModel tmp2  = new CompraModel(id, tmp.Id, compra.MetodoPago, item.Cantidad, tmp.Precio);
+                    VentasModel tmp3 = new VentasModel(tmp.IdCampesino, tmp.Id, item.Cantidad, tmp.Precio);
                     dBContext.Compras.Add(tmp2);
+                    dBContext.Ventas.Add(tmp3);
                     dBContext.CarritoCompras.Remove(item);
                 }
                 await dBContext.SaveChangesAsync();

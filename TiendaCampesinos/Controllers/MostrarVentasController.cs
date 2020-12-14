@@ -1,6 +1,6 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -12,7 +12,7 @@ using TiendaCampesinos.ViewModels;
 namespace TiendaCampesinos.Controllers
 {
     [Route("[controller]")]
-    public class MostrarProductosCampesinoController : Controller
+    public class MostrarVentasController : Controller
     {
         #region Properties
         private readonly TiendaCampesinosDBContext dBContext;
@@ -21,15 +21,15 @@ namespace TiendaCampesinos.Controllers
         #endregion
 
         #region Constructor
-        public MostrarProductosCampesinoController(TiendaCampesinosDBContext dBContext, IMemoryCache memoryCache){
+        public MostrarVentasController(TiendaCampesinosDBContext dBContext, IMemoryCache memoryCache){
             this.dBContext = dBContext;
             _cache = memoryCache;
         }
         #endregion
 
         [HttpGet("")]
-        public async Task<IActionResult> ListaProductos(){
-            ListProductViewModel vm = new ListProductViewModel();
+        public async Task<IActionResult> ListaVentas(){
+            ListVentasViewModel vm = new ListVentasViewModel();
             try{
                 string cacheEntry = "";
                 if (!_cache.TryGetValue("SesionIniciada", out cacheEntry))
@@ -42,15 +42,22 @@ namespace TiendaCampesinos.Controllers
                     return Redirect("/MostrarProductos");
                 }
                 long id = users.FirstOrDefault(user => user.Username == cacheEntry).Id;
-                List<ProductoModel> tempProductos = await dBContext.Productos.ToListAsync();
-                tempProductos = tempProductos.Where(prod => prod.IdCampesino == id).ToList();
-                vm.Productos = tempProductos;
+                List<VentasModel> ventasAsociadas = await dBContext.Ventas.ToListAsync();
+                ventasAsociadas = ventasAsociadas.Where(ventas => ventas.IdCampesino == id).ToList();
+                List<(VentasModel, ProductoModel)> construirLista = new List<(VentasModel, ProductoModel)>();
+                var productosAsociados = await dBContext.Productos.ToListAsync();
+                foreach (var item in ventasAsociadas)
+                {
+                    ProductoModel tmp = productosAsociados.First(prod => prod.Id == item.IdProducto);
+                    (VentasModel, ProductoModel) tmp2 = Tuple.Create(item, tmp).ToValueTuple();
+                    construirLista.Add(tmp2);
+                }
+                vm.VentaProducto = construirLista;
                 return View(vm);
             }
             catch (Exception e){
                 return Content(e.Message);
             }
-            
         }
     }
 }

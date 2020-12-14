@@ -9,5 +9,6 @@ namespace TiendaCampesinos.Services
         public DbSet<UsuarioModel> Usuarios {get; set;}
         public DbSet<CarritoComprasModel> CarritoCompras {get; set;}
         public DbSet<CompraModel> Compras {get; set;}
+        public DbSet<VentasModel> Ventas {get; set;}
     }
 }

@@ -67,3 +67,4 @@
 /home/t490/Git/Proyecto-POO/TiendaCampesinos/obj/Debug/netcoreapp3.1/Razor/Views/MostrarProductosCampesino/ListaProductos.cshtml.g.cs
 /home/t490/Git/Proyecto-POO/TiendaCampesinos/obj/Debug/netcoreapp3.1/Razor/Views/ActualizarUsuarioCampesino/ActualizarInfoCampesino.cshtml.g.cs
 /home/t490/Git/Proyecto-POO/TiendaCampesinos/obj/Debug/netcoreapp3.1/Razor/Views/ListaCompras/ListaCompras.cshtml.g.cs
+/home/t490/Git/Proyecto-POO/TiendaCampesinos/obj/Debug/netcoreapp3.1/Razor/Views/MostrarVentas/ListaVentas.cshtml.g.cs

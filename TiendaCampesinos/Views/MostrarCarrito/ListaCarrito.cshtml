@@ -63,17 +63,19 @@
     </table>
     </div>
     @if(Model.CarritoProducto.Count > 0){
-    <div>
+    <div id="Vaciar">
         <a asp-controller="VaciarCarrito" asp-action="VaciarCarrito">Vaciar Carrito</a>
         <br>
-        <label asp-for="Compra.MetodoPago"><b>Método de Pago</b></label>
         <div id="movimiento">
+            <label asp-for="Compra.MetodoPago"><b>Método de Pago</b></label>
+            <br>
             <form asp-action="ComprarCarrito" method="POST">
             <select name="Compra.MetodoPago" id="Tipo" asp-for="Compra.MetodoPago">
                 <option value="PayPal">PayPal</option>
                 <option value="Cuenta Ahorros">Cuenta Ahorros</option>
                 <option value="Tarjeta Crédito">Tarjeta Crédito</option>
             </select>
+            <br>
             <input id="boton" type="submit" value="Comprar">
             </form>          
         </div>

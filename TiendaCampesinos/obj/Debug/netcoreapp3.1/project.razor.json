@@ -14462,13 +14462,18 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/home/t490/Git/Proyecto-POO/TiendaCampesinos/Views/HistorialCompras.cshtml/ListaCompras.cshtml",
-      "TargetPath": "Views\\HistorialCompras.cshtml\\ListaCompras.cshtml",
+      "FilePath": "/home/t490/Git/Proyecto-POO/TiendaCampesinos/Views/MostrarVentas/ListaVentas.cshtml",
+      "TargetPath": "Views\\MostrarVentas\\ListaVentas.cshtml",
       "FileKind": "mvc"
     },
     {
       "FilePath": "/home/t490/Git/Proyecto-POO/TiendaCampesinos/Views/CrearProductos/CrearProducto.cshtml",
       "TargetPath": "Views\\CrearProductos\\CrearProducto.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/t490/Git/Proyecto-POO/TiendaCampesinos/Views/ListaCompras/ListaCompras.cshtml",
+      "TargetPath": "Views\\ListaCompras\\ListaCompras.cshtml",
       "FileKind": "mvc"
     }
   ],
