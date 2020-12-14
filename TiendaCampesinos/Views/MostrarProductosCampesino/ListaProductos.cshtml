@@ -41,6 +41,7 @@
             </tr>
         </thead>
         <tbody>
+            <form asp-action="ListaProductos" method="POST">
             <ul>
                 @foreach (var item in Model.Productos)
                 {
@@ -52,6 +53,7 @@
                     </tr>
                 }
             </ul>
+            </form>
         </tbody>
     </table>
     </div>

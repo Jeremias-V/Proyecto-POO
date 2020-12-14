@@ -38,8 +38,17 @@ namespace TiendaCampesinos.Controllers
                 }
                 var users = await dBContext.Usuarios.ToListAsync();
                 long id = users.FirstOrDefault(user => user.Username == cacheEntry).Id;
-                vm.Carrito = await dBContext.CarritoCompras.ToListAsync();
-                //var ans = vm.Carrito.Where(carrito => carrito.IdUsuario == id);
+                List<CarritoComprasModel> carritoAsociado = await dBContext.CarritoCompras.ToListAsync();
+                carritoAsociado = carritoAsociado.Where(carrito => carrito.IdUsuario == id).ToList();
+                List<(CarritoComprasModel, ProductoModel)> construirLista = new List<(CarritoComprasModel, ProductoModel)>();
+                var productosAsociados = await dBContext.Productos.ToListAsync();
+                foreach (var item in carritoAsociado)
+                {
+                    ProductoModel tmp = productosAsociados.First(prod => prod.Id == item.IdProducto);
+                    (CarritoComprasModel, ProductoModel) tmp2 = Tuple.Create(item, tmp).ToValueTuple();
+                    construirLista.Add(tmp2);
+                }
+                vm.CarritoProducto = construirLista;
                 return View(vm);
             }
             catch (Exception e){

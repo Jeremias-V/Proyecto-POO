@@ -13,6 +13,13 @@ namespace TiendaCampesinos.Models
         public long IdUsuario { get; set; }
         public int Cantidad { get; set;}
 
+        public CarritoComprasModel(){}
+
+        public CarritoComprasModel(long idprod, long idusr, int cant){
+            IdProducto = idprod;
+            IdUsuario = idusr;
+            Cantidad = cant;
+        }
     }
     
 

@@ -49,5 +49,33 @@ namespace TiendaCampesinos.Controllers
             }
             
         }
+
+        [HttpPost("")]
+        public async Task<IActionResult> ListaProductos(ProductoModel producto){
+            try{
+                /*
+                Verificar si ya tiene agregado el id de producto, de ser asi unicamente modificar la cantidad
+                en caso contrario agregar.
+
+                Tener cuidado con agregar mas cantidad de la necesaria, restar cantidades si se agrega o sumar
+                si se elimina.
+                */
+                string cacheEntry = "";
+                if (!_cache.TryGetValue("SesionIniciada", out cacheEntry))
+                {
+                    return Redirect("/");
+                }
+                var users = await dBContext.Usuarios.ToListAsync();
+                long id = users.FirstOrDefault(user => user.Username == cacheEntry).Id;
+                CarritoComprasModel nuevaCompra = new CarritoComprasModel(producto.Id, id, producto.Cantidad);
+                dBContext.CarritoCompras.Add(nuevaCompra);
+                await dBContext.SaveChangesAsync();
+                return Redirect("/MostrarProductos");
+            }
+            catch (Exception e){
+                return Content(e.Message);
+            }
+            
+        }
     }
 }

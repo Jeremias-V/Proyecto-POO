@@ -5,11 +5,11 @@ namespace TiendaCampesinos.ViewModels
 {
     public class ListCarritoViewModel
     {
-        public List<CarritoComprasModel> Carrito { get; set; }
+        public List<(CarritoComprasModel, ProductoModel)> CarritoProducto { get; set; }
 
         public ListCarritoViewModel()
         {
-            Carrito = new List<CarritoComprasModel>();
+            CarritoProducto = new List<(CarritoComprasModel, ProductoModel)>();
         }
     }
 }
