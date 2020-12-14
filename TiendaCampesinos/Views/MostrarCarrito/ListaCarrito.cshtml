@@ -1,4 +1,4 @@
-@model TiendaCampesinos.ViewModels.ListProductViewModel
+@model TiendaCampesinos.ViewModels.ListCarritoViewModel
 
 <!DOCTYPE html>
 <html lang="es">
@@ -28,7 +28,7 @@
                     </a>
                 </li>
                 <li>
-                    <a asp-controller="MostrarCarrito" asp-action="ListaCarrito">
+                    <a>
                         Carrito Compras
                     </a>
                 </li>                
@@ -47,13 +47,13 @@
         </thead>
         <tbody>
             <ul>
-                @foreach (var item in Model.Productos)
+                @foreach (var item in Model.Carrito)
                 {
                     <tr>
-                        <td>@Html.DisplayFor(modelItem => item.NombreProducto)</td>
-                        <td><img src="@Html.DisplayFor(modelItem => item.Imagen)" alt="Imagen Producto" width="100" height="100" /></td>
-                        <td>@Html.DisplayFor(modelItem => item.PesoNeto)</td>
-                        <td>@Html.DisplayFor(modelItem => item.Precio)</td>
+                        <td>@Html.DisplayFor(modelItem => item.IdProducto)</td>
+                        <td><img src="@Html.DisplayFor(modelItem => item.IdProducto)" alt="Imagen Producto" width="100" height="100" /></td>
+                        <td>@Html.DisplayFor(modelItem => item.Cantidad)</td>
+                        <td>@Html.DisplayFor(modelItem => item.IdUsuario)</td>
                     </tr>
                 }
             </ul>

@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using TiendaCampesinos.Models;
-using TiendaCampesinos.Services;
 
 namespace TiendaCampesinos.ViewModels
 {

@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda de Campesinos | Lista de Productos</title>
+    <title>Tienda de Campesinos | Lista de Productos Campesino</title>
     <link rel="stylesheet" href="~/css/ListProductos.css">
 </head>
 <body>
@@ -18,18 +18,13 @@
                     </a>
                 </li> 
                 <li>
-                    <a asp-controller="ActualizarUsuario" asp-action="ActualizarInfo">
+                    <a asp-controller="ActualizarUsuarioCampesino" asp-action="ActualizarInfoCampesino">
                         Modificar Datos
                     </a>
                 </li>
                 <li>
-                    <a>
-                        Historial Compras
-                    </a>
-                </li>
-                <li>
-                    <a asp-controller="MostrarCarrito" asp-action="ListaCarrito">
-                        Carrito Compras
+                    <a asp-controller="CrearProductos" asp-action="CrearProducto">
+                        Crear Producto
                     </a>
                 </li>                
             </ul>

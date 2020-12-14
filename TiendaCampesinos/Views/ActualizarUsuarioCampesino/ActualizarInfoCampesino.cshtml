@@ -1,0 +1,108 @@
+@model TiendaCampesinos.Models.UsuarioModel
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Campesinos | Lista de Productos</title>
+    <link rel="stylesheet" href="~/css/Update.css">
+</head>
+<body>
+    
+    <div id="HomeWrapper">
+        <header>
+            <ul>
+                <li>
+                    <a asp-controller="CerrarSesion" asp-action="CerrarSesion">
+                        Cerrar Sesión   
+                    </a>
+                </li> 
+                <li>
+                    <a asp-controller="MostrarProductos" asp-action="ListaProductos">
+                        Ver Productos
+                    </a>
+                </li>
+                <li>
+                    <a asp-controller="CrearProductos" asp-action="CrearProducto">
+                        Crear Producto
+                    </a>
+                </li>               
+            </ul>
+        </header>
+    </div>
+    <div id="registro">
+        <form asp-action="ActualizarInfo" method="POST">
+            <label><b>Información Básica</b></label>
+            <input type="hidden" asp-for="Id">
+            <input type="hidden" asp-for="Username">
+            <input type="hidden" asp-for="Password">
+            <input type="hidden" asp-for="TipoUsuario">
+            <div id="infobasica">
+                <label asp-for="Nombre">Nombre</label>
+                <input required asp-for="Nombre"/>
+                <br />
+                <label asp-for="Apellido">Apellido</label>
+                <input required asp-for="Apellido"/>
+                <br />
+            </div>
+            <div id="infobasica2">
+                <label asp-for="Edad">Edad</label>
+                <input required type="number" min="18" max="100" asp-for="Edad"/>
+                <br />
+                <label asp-for="NumeroIdentificacion">Número de Identificación</label>
+                <input required type="text" asp-for="NumeroIdentificacion"/>
+            </div>
+            <br />
+            <label><b>Paypal</b></label>
+            <div id="pai">
+                <label asp-for="CorreoPaypal">Dirección de Correo PayPal</label>
+                <input required asp-for="CorreoPaypal"/>
+            </div>
+            <br />
+            <label> <b>Tarjeta crédito</b></label>
+            <div>
+                <label asp-for="NombreEnTC">Nombre en Tarjeta de Crédito</label>
+                <input required asp-for="NombreEnTC"/>
+                <br />
+                <label asp-for="NumeroTC">Numero de Tarjeta</label>
+                <input required type="text" asp-for="NumeroTC"/>
+                <br />
+                <label asp-for="CVV">Código de Seguridad (CVV)</label>
+                <input required type="number" min="0000" max="9999" asp-for="CVV"/>
+                <br />
+                <label asp-for="FechaCaducidadTC">Fecha de Caducidad</label>
+                <input required type="text" asp-for="FechaCaducidadTC"/>
+
+            <br />
+            <br />
+            <label><b>Cuenta ahorros</b></label>
+            <div id="aho">
+                <label asp-for="NumeroCA">Número de Cuenta</label>
+                <input required type="text" asp-for="NumeroCA"/>
+                <br />
+                <label asp-for="IdentificacionAsociadaCA">Número de Identificación Asociado</label>
+                <input required type="text" asp-for="IdentificacionAsociadaCA"/>
+            </div>
+            <br />
+            <label><b>Información domicilio</b></label>
+            <div id="first">
+                <label asp-for="Departamento">Departamento</label>
+                <input required asp-for="Departamento"/>
+                <br />
+                <label asp-for="Municipio">Municipio</label>
+                <input required asp-for="Municipio"/>
+                <br />
+            </div>
+            
+            <div id="second">
+                <label asp-for="Direccion">Dirección</label>
+                <input required asp-for="Direccion"/>
+                <br />
+            </div>            
+            <div>
+                <br />
+                <input id="boton" type="submit" value="Actualizar Información">
+            </div>
+        </form>
+    </div>
+</body>

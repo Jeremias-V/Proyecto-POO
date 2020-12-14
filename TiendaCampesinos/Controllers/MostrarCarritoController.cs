@@ -1,6 +1,6 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -12,7 +12,7 @@ using TiendaCampesinos.ViewModels;
 namespace TiendaCampesinos.Controllers
 {
     [Route("[controller]")]
-    public class MostrarProductosController : Controller
+    public class MostrarCarritoController : Controller
     {
         #region Properties
         private readonly TiendaCampesinosDBContext dBContext;
@@ -21,15 +21,15 @@ namespace TiendaCampesinos.Controllers
         #endregion
 
         #region Constructor
-        public MostrarProductosController(TiendaCampesinosDBContext dBContext, IMemoryCache memoryCache){
+        public MostrarCarritoController(TiendaCampesinosDBContext dBContext, IMemoryCache memoryCache){
             this.dBContext = dBContext;
             _cache = memoryCache;
         }
         #endregion
 
         [HttpGet("")]
-        public async Task<IActionResult> ListaProductos(){
-            ListProductViewModel vm = new ListProductViewModel();
+        public async Task<IActionResult> ListaCarrito(){
+            ListCarritoViewModel vm = new ListCarritoViewModel();
             try{
                 string cacheEntry = "";
                 if (!_cache.TryGetValue("SesionIniciada", out cacheEntry))
@@ -37,11 +37,9 @@ namespace TiendaCampesinos.Controllers
                     return Redirect("/");
                 }
                 var users = await dBContext.Usuarios.ToListAsync();
-                var usr = users.FirstOrDefault(user => user.Username == cacheEntry);
-                if(usr.TipoUsuario == "Campesino"){
-                    return Redirect("/MostrarProductosCampesino");
-                }
-                vm.Productos = await dBContext.Productos.ToListAsync();
+                long id = users.FirstOrDefault(user => user.Username == cacheEntry).Id;
+                vm.Carrito = await dBContext.CarritoCompras.ToListAsync();
+                //var ans = vm.Carrito.Where(carrito => carrito.IdUsuario == id);
                 return View(vm);
             }
             catch (Exception e){

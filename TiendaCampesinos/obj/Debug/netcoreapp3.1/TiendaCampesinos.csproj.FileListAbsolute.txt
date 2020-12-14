@@ -62,3 +62,7 @@
 /home/t490/Git/Proyecto-POO/TiendaCampesinos/obj/Debug/netcoreapp3.1/Razor/Views/MostrarProductos/ListaProductos.cshtml.g.cs
 /home/t490/Git/Proyecto-POO/TiendaCampesinos/obj/Debug/netcoreapp3.1/Razor/Views/Logout/CerrarSesion.cshtml.g.cs
 /home/t490/Git/Proyecto-POO/TiendaCampesinos/obj/Debug/netcoreapp3.1/Razor/Views/ActualizarUsuario/ActualizarInfo.cshtml.g.cs
+/home/t490/Git/Proyecto-POO/TiendaCampesinos/obj/Debug/netcoreapp3.1/Razor/Views/MostrarCarrito/ListaCarrito.cshtml.g.cs
+/home/t490/Git/Proyecto-POO/TiendaCampesinos/obj/Debug/netcoreapp3.1/Razor/Views/CrearProductos/CrearProducto.cshtml.g.cs
+/home/t490/Git/Proyecto-POO/TiendaCampesinos/obj/Debug/netcoreapp3.1/Razor/Views/MostrarProductosCampesino/ListaProductos.cshtml.g.cs
+/home/t490/Git/Proyecto-POO/TiendaCampesinos/obj/Debug/netcoreapp3.1/Razor/Views/ActualizarUsuarioCampesino/ActualizarInfoCampesino.cshtml.g.cs

@@ -7,5 +7,6 @@ namespace TiendaCampesinos.Services
         public TiendaCampesinosDBContext(DbContextOptions<TiendaCampesinosDBContext> options) : base(options){}
         public DbSet<ProductoModel> Productos {get; set;}
         public DbSet<UsuarioModel> Usuarios {get; set;}
+        public DbSet<CarritoComprasModel> CarritoCompras {get; set;}
     }
 }

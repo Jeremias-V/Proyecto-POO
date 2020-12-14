@@ -16,6 +16,17 @@ namespace TiendaCampesinos.Models
         public int Precio { get; set; }
         public int Cantidad { get; set; }
 
+        public ProductoModel(long id, string name, string img, int peso, int precio, int cantidad){
+            IdCampesino = id;
+            NombreProducto = name;
+            Imagen = img;
+            PesoNeto = peso;
+            Precio = precio;
+            Cantidad = cantidad;
+        }
+
+        public ProductoModel(){}
+
     }
     
 

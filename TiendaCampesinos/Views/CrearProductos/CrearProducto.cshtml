@@ -1,0 +1,58 @@
+@model TiendaCampesinos.Models.ProductoModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Campesinos | Crear Producto</title>
+    <link rel="stylesheet" href="~/css/Creacion.css">
+</head>
+<body>
+    <div id="HomeWrapper">
+        <header>
+            <ul>
+                <li>
+                    <a asp-controller="CerrarSesion" asp-action="CerrarSesion">
+                        Cerrar Sesión   
+                    </a>
+                </li> 
+                <li>
+                    <a asp-controller="ActualizarUsuarioCampesino" asp-action="ActualizarInfoCampesino">
+                        Modificar Datos
+                    </a>
+                </li>
+                <li>
+                    <a asp-controller="MostrarProductos" asp-action="ListaProductos">
+                        Ver Productos
+                    </a>
+                </li>               
+            </ul>
+        </header>
+    </div>
+    <div id="registro">
+        <form asp-action="CrearProducto" method="POST">
+            <div id= "usuario">
+                <label asp-for="NombreProducto">Nombre del Producto</label>
+                <input required maxlength="100" asp-for="NombreProducto"/>
+                <br />
+                <label asp-for="Imagen">URL Imagen</label>
+                <input type="text" required maxlength="1000" asp-for="Imagen"/>
+                <br />
+                <label asp-for="PesoNeto">Peso Neto</label>
+                <input required type="number" min="0" maxlength="10" asp-for="PesoNeto"/>
+                <br />
+                <label asp-for="Precio">Precio</label>
+                <input required type="number" min="0" maxlength="10" asp-for="Precio"/>
+                <br />
+                <label asp-for="Cantidad">Cantidad</label>
+                <input required type="number" min="1" maxlength="10" asp-for="Cantidad"/>
+            </div>
+            <div>
+                <br />
+                <input id="boton" type="submit" value="Crear Producto">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

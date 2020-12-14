@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -12,7 +11,7 @@ using TiendaCampesinos.ViewModels;
 namespace TiendaCampesinos.Controllers
 {
     [Route("[controller]")]
-    public class MostrarProductosController : Controller
+    public class MostrarProductosCampesinoController : Controller
     {
         #region Properties
         private readonly TiendaCampesinosDBContext dBContext;
@@ -21,7 +20,7 @@ namespace TiendaCampesinos.Controllers
         #endregion
 
         #region Constructor
-        public MostrarProductosController(TiendaCampesinosDBContext dBContext, IMemoryCache memoryCache){
+        public MostrarProductosCampesinoController(TiendaCampesinosDBContext dBContext, IMemoryCache memoryCache){
             this.dBContext = dBContext;
             _cache = memoryCache;
         }
@@ -35,11 +34,6 @@ namespace TiendaCampesinos.Controllers
                 if (!_cache.TryGetValue("SesionIniciada", out cacheEntry))
                 {
                     return Redirect("/");
-                }
-                var users = await dBContext.Usuarios.ToListAsync();
-                var usr = users.FirstOrDefault(user => user.Username == cacheEntry);
-                if(usr.TipoUsuario == "Campesino"){
-                    return Redirect("/MostrarProductosCampesino");
                 }
                 vm.Productos = await dBContext.Productos.ToListAsync();
                 return View(vm);

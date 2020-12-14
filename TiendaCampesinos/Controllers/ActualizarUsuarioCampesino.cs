@@ -1,6 +1,6 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -12,7 +12,7 @@ using TiendaCampesinos.ViewModels;
 namespace TiendaCampesinos.Controllers
 {
     [Route("[controller]")]
-    public class MostrarProductosController : Controller
+    public class ActualizarUsuarioCampesinoController : Controller
     {
         #region Properties
         private readonly TiendaCampesinosDBContext dBContext;
@@ -21,15 +21,14 @@ namespace TiendaCampesinos.Controllers
         #endregion
 
         #region Constructor
-        public MostrarProductosController(TiendaCampesinosDBContext dBContext, IMemoryCache memoryCache){
+        public ActualizarUsuarioCampesinoController(TiendaCampesinosDBContext dBContext, IMemoryCache memoryCache){
             this.dBContext = dBContext;
             _cache = memoryCache;
         }
         #endregion
-
+        
         [HttpGet("")]
-        public async Task<IActionResult> ListaProductos(){
-            ListProductViewModel vm = new ListProductViewModel();
+        public async Task<IActionResult> ActualizarInfoCampesino(){
             try{
                 string cacheEntry = "";
                 if (!_cache.TryGetValue("SesionIniciada", out cacheEntry))
@@ -37,17 +36,29 @@ namespace TiendaCampesinos.Controllers
                     return Redirect("/");
                 }
                 var users = await dBContext.Usuarios.ToListAsync();
-                var usr = users.FirstOrDefault(user => user.Username == cacheEntry);
-                if(usr.TipoUsuario == "Campesino"){
-                    return Redirect("/MostrarProductosCampesino");
-                }
-                vm.Productos = await dBContext.Productos.ToListAsync();
-                return View(vm);
+                long id = users.FirstOrDefault(user => user.Username == cacheEntry).Id;
+                UsuarioModel user = await dBContext.Usuarios.FindAsync(id);
+                return View(user);
             }
             catch (Exception e){
                 return Content(e.Message);
             }
             
+        }
+
+        [HttpPost("")]
+        public async Task<IActionResult> ActualizarInfo(UsuarioModel Usuario)
+        {
+            try
+            {
+                dBContext.Entry(Usuario).State = EntityState.Modified;
+                await dBContext.SaveChangesAsync();
+                return Redirect("/MostrarProductosCampesino");
+            }
+            catch (Exception e)
+            {
+                return Content(e.Message);
+            }
         }
     }
 }
