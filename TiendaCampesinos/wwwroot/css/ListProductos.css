@@ -6,12 +6,11 @@
 
 body{
     background-image: url("https://1.bp.blogspot.com/-Y2TBmGkP1Qk/VgBv9G8EiuI/AAAAAAAAA-A/EuaExDn7iXUK3tQrvTWbLsXgtHalgbf8ACPcBGAYYCw/s1600/302.jpg");
-    background-repeat: no-repeat;
     background-size: cover;
 }
 
 div#lista{
-    height: 100vh;
+    height: 110vh;
     display: grid;
     grid-template-rows: 100px 1fr
 }
@@ -26,8 +25,8 @@ div#lista table
 {
     border-collapse: collapse;
     width: 90%;
-    margin: 0 auto;
     margin-top: 3em;
+    margin: 0 auto;
 }
 
 div#lista table th

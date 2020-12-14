@@ -14422,6 +14422,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/t490/Git/Proyecto-POO/TiendaCampesinos/Views/ActualizarProducto/ActualizarInfo.cshtml",
+      "TargetPath": "Views\\ActualizarProducto\\ActualizarInfo.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/t490/Git/Proyecto-POO/TiendaCampesinos/Views/Shared/_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
