@@ -37,6 +37,10 @@ namespace TiendaCampesinos.Controllers
                     return Redirect("/");
                 }
                 var users = await dBContext.Usuarios.ToListAsync();
+                var usr = users.FirstOrDefault(user => user.Username == cacheEntry);
+                if(usr.TipoUsuario == "Campesino"){
+                    return Redirect("/MostrarProductosCampesino");
+                }
                 long id = users.FirstOrDefault(user => user.Username == cacheEntry).Id;
                 List<CarritoComprasModel> carritoAsociado = await dBContext.CarritoCompras.ToListAsync();
                 carritoAsociado = carritoAsociado.Where(carrito => carrito.IdUsuario == id).ToList();
@@ -50,6 +54,38 @@ namespace TiendaCampesinos.Controllers
                 }
                 vm.CarritoProducto = construirLista;
                 return View(vm);
+            }
+            catch (Exception e){
+                return Content(e.Message);
+            }
+        }
+
+        [HttpPost("")]
+        public async Task<IActionResult> ComprarCarrito(CompraModel compra){
+            try{
+                string cacheEntry = "";
+                if (!_cache.TryGetValue("SesionIniciada", out cacheEntry))
+                {
+                    return Redirect("/");
+                }
+                var users = await dBContext.Usuarios.ToListAsync();
+                var usr = users.FirstOrDefault(user => user.Username == cacheEntry);
+                if(usr.TipoUsuario == "Campesino"){
+                    return Redirect("/MostrarProductosCampesino");
+                }
+                long id = users.FirstOrDefault(user => user.Username == cacheEntry).Id;
+                List<CarritoComprasModel> carritoAsociado = await dBContext.CarritoCompras.ToListAsync();
+                carritoAsociado = carritoAsociado.Where(carrito => carrito.IdUsuario == id).ToList();
+                var productosAsociados = await dBContext.Productos.ToListAsync();
+                foreach (var item in carritoAsociado)
+                {
+                    ProductoModel tmp = productosAsociados.First(prod => prod.Id == item.IdProducto);
+                    CompraModel tmp2  = new CompraModel(id, tmp.Id, compra.MetodoPago, item.Cantidad, tmp.Precio);
+                    dBContext.Compras.Add(tmp2);
+                    dBContext.CarritoCompras.Remove(item);
+                }
+                await dBContext.SaveChangesAsync();
+                return Redirect("/MostrarCarrito");
             }
             catch (Exception e){
                 return Content(e.Message);

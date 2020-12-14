@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -34,6 +35,11 @@ namespace TiendaCampesinos.Controllers
                 if (!_cache.TryGetValue("SesionIniciada", out cacheEntry))
                 {
                     return Redirect("/");
+                }
+                var users = await dBContext.Usuarios.ToListAsync();
+                var usr = users.FirstOrDefault(user => user.Username == cacheEntry);
+                if(usr.TipoUsuario != "Campesino"){
+                    return Redirect("/MostrarProductos");
                 }
                 vm.Productos = await dBContext.Productos.ToListAsync();
                 return View(vm);

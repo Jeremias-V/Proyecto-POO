@@ -15,7 +15,16 @@ namespace TiendaCampesinos.Models
         public int Precio { get; set;}
         public DateTime Fecha { get; set; }
 
+        public CompraModel(){}
+        public CompraModel(long idcliente, long idproducto, string metodopago, int cantidad, int precio){
+            IdCliente = idcliente;
+            IdProducto = idproducto;
+            MetodoPago = metodopago;
+            Cantidad = cantidad;
+            Precio = precio;
+            Fecha = DateTime.Now;
+        }
+
     }
-    
 
 }
